@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { Request, Response, Router } from "express";
+import { Router } from "express";
+import routerPokemons from './Pokemons.routes'
 const routes: Router = Router();
 
-routes.get('/user', (_req: Request, res: Response): any => { 
-    res.send('hola mundo');
-});
+routes.use('/pokemon', routerPokemons);
 
 export default routes;
 
